@@ -20,19 +20,70 @@ body {
         "header"
         "navigation"
         "main";
-}
+      }
 
 .header {
   grid-area: header;
-}
+  }
 
 .navigation {
   grid-area: navigation;
-}
+  }
 
 .main {
   grid-area: main;
+  }
+
+.main-content-wrapper {
+  display: grid;
+  width: 100%;
+  }
+
+.widget-container-full,
+.widget-container-half {
+  width: 90vw;
+  }
+
+@media (min-width: 768px) {
+    .grid-container {
+      grid-template-columns: 55px 1fr;
+      grid-template-areas:
+        "header header"
+        "navigation main";
+      }
+
+    .main-content-wrapper {
+      grid-template-columns: 50%;
+      }
+
+  .widget-container-full {
+    width: 88vw;
+    }
+
+  .widget-container-half {
+    width: 42vw;
+    }
+
+    .traffic,
+    .social-stats {
+      grid-column: 1 / span: 2;
+    }
+
+    .daily,
+    .members,
+    .message {
+      grid-column: 1 / span: 1;
+    }
+
+    .mobile-users,
+    .recent-activity,
+    .settings {
+      grid-column: 2 / span: 1;
+    }
+
 }
+
+
 
 /*----- Settings -----*/
 
