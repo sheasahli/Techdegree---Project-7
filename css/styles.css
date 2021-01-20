@@ -1,8 +1,40 @@
+/* --- MAIN ELEMENTS ----- */
 
+* {
+    box-sizing: border-box;
+}
 
+body {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+}
 
+/* --- GRID LAYOUT ----- */
 
-/* Settings */
+.grid-container {
+      display: grid;
+      grid-template-columns: 100%;
+      grid-template-rows: auto;
+      grid-template-areas:
+        "header"
+        "navigation"
+        "main";
+}
+
+.header {
+  grid-area: header;
+}
+
+.navigation {
+  grid-area: navigation;
+}
+
+.main {
+  grid-area: main;
+}
+
+/*----- Settings -----*/
 
 .switch-material.switch-light > span {
 	display: inline-block;
