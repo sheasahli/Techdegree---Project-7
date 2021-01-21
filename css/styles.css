@@ -8,6 +8,9 @@ body {
   width: 100%;
   margin: 0 auto;
   padding: 0;
+  font-size: 1em;
+  font-family: 'Avenir Light', sans-serif;
+  color: #707070;
 }
 
 /* --- GRID LAYOUT ----- */
@@ -52,7 +55,7 @@ body {
         "navigation main";
       }
 
-    .main-content-wrapper {
+  .main-content-wrapper {
       grid-template-columns: 50%;
       }
 
@@ -82,6 +85,59 @@ body {
     }
 
 }
+
+
+/*----- Header -----*/
+
+header {
+  color: white;
+  background-color: #7477BF;
+}
+
+h1 {
+  float: left;
+  clear: right;
+  padding-left: 10px;
+}
+
+.user {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 30px;
+  padding-left: 20px;
+  padding-right: 10px;
+}
+
+.bell {
+  height: 20px;
+  padding-right: 10px;
+  position: relative;
+}
+
+.bell:hover {
+  transform: scale(1.1);
+  transition-duration: .5s;
+}
+
+#notifications img {
+  position: absolute;
+  height: 10px;
+  top: 35px;
+}
+
+.user img {
+  height: 25px;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.user h3 {
+  margin: 0;
+  font-size: 1em;
+}
+
+/*----- Navigation -----*/
+
 
 
 
