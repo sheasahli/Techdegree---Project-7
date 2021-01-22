@@ -14,6 +14,12 @@ body {
   color: #707070;
 }
 
+section h3 {
+    text-transform: uppercase;
+}
+
+
+
 /* --- GRID LAYOUT ----- */
 
 .grid-container {
@@ -41,6 +47,7 @@ body {
 .main-content-wrapper {
   display: grid;
   width: 100%;
+  padding: 0 15px;
   }
 
 .widget-container-full,
@@ -115,7 +122,7 @@ nav {
 /*----- Dashboard -----*/
 
 .headline {
-  padding: 0 25px;
+  padding: 0 25px 0 15px;
   float: left;
   clear: right;
 }
@@ -130,6 +137,7 @@ nav {
   justify-content: flex-end;
   padding: 22px 0;
   border-radius: 0 0 0 8px;
+  margin-right: 0;
 
 }
 
@@ -165,6 +173,25 @@ nav {
   cursor: pointer;
 }
 
+/*----- Traffic -----*/
+
+.traffic-header {
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+.traffic-nav {
+  display: flex;
+  list-style: none;
+  justify-content: flex-end;
+  padding-top: 2px;
+}
+
+ li {
+  align-items: flex-start;
+  padding: 0 0.5em;
+}
+
 
 /*----- Settings -----*/
 
@@ -181,6 +208,10 @@ nav {
 /*----- Media Queries -----*/
 
 @media (min-width: 768px) {
+
+  section {
+    border: 2px solid lightgrey;
+  }
 
   .grid-container {
     grid-template-columns: 55px 1fr;
