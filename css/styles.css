@@ -1,3 +1,4 @@
+
 /* --- MAIN ELEMENTS ----- */
 
 * {
@@ -144,8 +145,25 @@ nav {
 
 /*----- Alert -----*/
 
+.alertBanner {
+  display: grid;
+  grid-template-columns: 1fr 20px;
+  background-color: #7477BF;
+  color: white;
+  border-radius: 5px;
+  padding: 5px 10px;
+  height: auto;
+  width: 95%;
+  margin: 20px auto;
+}
 
+.alertBanner p {
+  margin-left: 10px;
+}
 
+.alert-close {
+  cursor: pointer;
+}
 
 
 /*----- Settings -----*/
