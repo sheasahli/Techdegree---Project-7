@@ -143,12 +143,16 @@ nav {
 
 #search {
   width: 75%;
-  border-radius: 5px;
+  border-radius: 5px 0 0 5px;
+  border: none;
 }
 
 .main-header-search button {
   width: 10%;
   margin-right: 10px;
+  border-radius: 0 5px 5px 0;
+  background-color: white;
+  border: none;
 }
 
 /*----- Alert -----*/
@@ -191,7 +195,6 @@ nav {
   align-items: flex-start;
   padding: 0 0.5em;
 }
-
 
 /*----- Settings -----*/
 
