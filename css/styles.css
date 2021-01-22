@@ -142,6 +142,9 @@ nav {
   margin-right: 10px;
 }
 
+/*----- Alert -----*/
+
+
 
 
 
@@ -159,44 +162,43 @@ nav {
 
 /*----- Media Queries -----*/
 
-
 @media (min-width: 768px) {
 
-    .grid-container {
-      grid-template-columns: 55px 1fr;
-      grid-template-areas:
-        "header header"
-        "navigation main";
-      }
-
- .main-content-wrapper {
-      grid-template-columns: 50%;
-      }
-
-  .widget-container-full {
-    width: 90vw;
+  .grid-container {
+    grid-template-columns: 55px 1fr;
+    grid-template-areas:
+      "header header"
+      "navigation main";
     }
 
-  .widget-container-half {
-    width: 45vw;
+.main-content-wrapper {
+    grid-template-columns: 50%;
     }
 
-    .traffic,
-    .social-stats {
-      grid-column: 1 / span: 2;
-    }
+.widget-container-full {
+  width: 90vw;
+  }
 
-    .daily,
-    .members,
-    .message {
-      grid-column: 1 / span: 1;
-    }
+.widget-container-half {
+  width: 45vw;
+  }
 
-    .mobile-users,
-    .recent-activity,
-    .settings {
-      grid-column: 2 / span: 1;
-    }
+  .traffic,
+  .social-stats {
+    grid-column: 1 / span:2;
+  }
+
+  .daily,
+  .members,
+  .message {
+    grid-column: 1 / span:1;
+  }
+
+  .mobile-users,
+  .recent-activity,
+  .settings {
+    grid-column: 2 / span:1;
+  }
 
 
 }
