@@ -47,45 +47,6 @@ body {
   width: 90vw;
   }
 
-@media (min-width: 768px) {
-    .grid-container {
-      grid-template-columns: 55px 1fr;
-      grid-template-areas:
-        "header header"
-        "navigation main";
-      }
-
-  .main-content-wrapper {
-      grid-template-columns: 50%;
-      }
-
-  .widget-container-full {
-    width: 88vw;
-    }
-
-  .widget-container-half {
-    width: 42vw;
-    }
-
-    .traffic,
-    .social-stats {
-      grid-column: 1 / span: 2;
-    }
-
-    .daily,
-    .members,
-    .message {
-      grid-column: 1 / span: 1;
-    }
-
-    .mobile-users,
-    .recent-activity,
-    .settings {
-      grid-column: 2 / span: 1;
-    }
-
-}
-
 
 /*----- Header -----*/
 
@@ -181,7 +142,6 @@ nav {
   margin-right: 10px;
 }
 
-/*----- Alert -----*/
 
 
 
@@ -194,4 +154,54 @@ nav {
 
 .switch-light strong {
 	padding-right: 10px;
+}
+
+
+/*----- Media Queries -----*/
+
+
+@media (min-width: 768px) {
+
+    .grid-container {
+      grid-template-columns: 55px 1fr;
+      grid-template-areas:
+        "header header"
+        "navigation main";
+      }
+
+ .main-content-wrapper {
+      grid-template-columns: 50%;
+      }
+
+  .widget-container-full {
+    width: 90vw;
+    }
+
+  .widget-container-half {
+    width: 45vw;
+    }
+
+    .traffic,
+    .social-stats {
+      grid-column: 1 / span: 2;
+    }
+
+    .daily,
+    .members,
+    .message {
+      grid-column: 1 / span: 1;
+    }
+
+    .mobile-users,
+    .recent-activity,
+    .settings {
+      grid-column: 2 / span: 1;
+    }
+
+
+}
+
+@media (min-width: 1024px) {
+
+
 }
