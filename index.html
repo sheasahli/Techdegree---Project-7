@@ -166,7 +166,7 @@
                 <p>Julia Smith</p>
                 <a href="#">julia.smith05@example.com</a>
               </div>
-              <p>10/15/2015</p>
+              <p class="date">10/15/2015</p>
             </div>
 
             <div class="members-container">
@@ -175,7 +175,7 @@
                 <p>Dale Byrd</p>
                 <a href="#">dale.byrd52@example.com</a>
               </div>
-              <p>10/15/2015</p>
+              <p class="date">10/15/2015</p>
             </div>
 
             <div class="members-container">
@@ -184,7 +184,7 @@
                 <p>Dawn Wood</p>
                 <a href="#">dawn.wood16@example.com</a>
               </div>
-              <p>10/15/2015</p>
+              <p class="date">10/15/2015</p>
             </div>
 
             <div class="members-container">
@@ -193,7 +193,7 @@
                 <p>Dan Oliver</p>
                 <a href="#">dan.oliver82@example.com</a>
               </div>
-              <p>10/15/2015</p>
+              <p class="date">10/15/2015</p>
             </div>
         </section>
 
@@ -204,36 +204,36 @@
             <img src="images/member-1.jpg" class="profile-img">
             <div class="members-text">
               <p>Julia Smith commented on your <strong>SEO App Plan</strong></p>
-              <p>4 hours ago</p>
+              <p class="time">4 hours ago</p>
             </div>
-            <a href="#" id="arrow-icon" class="arrow-right"></a>
+            <a href="#" id="arrow-icon" class="arrow"></a>
           </div>
 
           <div class="members-container">
             <img src="images/member-2.jpg" class="profile-img">
             <div class="members-text">
               <p>Nate Diaz liked <strong>Facebook's Changes for 2021</strong></p>
-              <p>5 hours ago</p>
+              <p class="time">5 hours ago</p>
             </div>
-            <a href="#" id="arrow-icon" class="arrow-right"></a>
+            <a href="#" id="arrow-icon" class="arrow"></a>
           </div>
 
           <div class="members-container">
             <img src="images/member-3.jpg" class="profile-img">
             <div class="members-text">
               <p>Sun Zang liked <strong>Twitter's Changes for 2021</strong></p>
-              <p>1 day ago</p>
+              <p class="time">1 day ago</p>
             </div>
-            <a href="#" id="arrow-icon" class="arrow-right"></a>
+            <a href="#" id="arrow-icon" class="arrow"></a>
           </div>
 
           <div class="members-container">
             <img src="images/member-4.jpg" class="profile-img">
             <div class="members-text">
               <p>John Smith liked <strong>Instagram's Changes for 2021</strong></p>
-              <p>5 days ago</p>
+              <p class="time">5 days ago</p>
             </div>
-            <a href="#" id="arrow-icon" class="arrow-right"></a>
+            <a href="#" id="arrow-icon" class="arrow"></a>
           </div>
         </section>
 
@@ -242,8 +242,8 @@
           <h3>Message User</h3>
 
           <form class="widget-container">
-            <input type="text" placeholder="Search for user" class="form-field" id="userField">
-            <textarea placeholder="Message for user" class="form-area" id="messageField"> </textarea>
+            <input type="text" placeholder="Search for User" class="form-field" id="userField">
+            <textarea placeholder="Message for user" class="form-area" id="messageField">Message for User</textarea>
             <button class="button-primary" id="send">Send</button>
           </form>
         </section>
@@ -251,31 +251,33 @@
         <section class="settings">
           <h3>Settings</h3>
 
-          <label class="switch-light switch-material">
-          					<input type="checkbox">
+          <label class="switch-light switch-material settings-option send-email">
+				              <input type="checkbox">
+				              <strong class="large-4 columns">
+				                Send Email Notificatons
+				              </strong>
 
-          					<strong class="large-4 columns">
-          						Send email notifications
-          					</strong>
-          					<span class="large-4 columns float-left">
-          						<span>Off</span>
-          						<span>On</span>
-          						<a></a>
-          					</span>
-          		</label>
+				              <span class="large-4 columns float-left">
+				                <span>Off</span>
+				                <span>On</span>
+				                <a></a>
+				              </span>
+				            </label>
 
-          		<label class="switch-light switch-material">
-          					<input type="checkbox">
 
-          					<strong class="large-4 columns">
-          						Set profile to public
-          					</strong>
-          					<span class="large-4 columns float-left">
-          						<span>Off</span>
-          						<span>On</span>
-          						<a></a>
-          					</span>
-          		</label>
+				            <label class="switch-light switch-material settings-option set-public">
+				              <input type="checkbox">
+				              <strong class="large-4 columns">
+				                Set Profile to Public
+				              </strong>
+
+				              <span class="large-4 columns float-left">
+				                <span>Off</span>
+				                <span>On</span>
+				                <a></a>
+				              </span>
+				        </label>
+          </section>
 
               <select class="form-field" id="timezone">
                 <option disabled selected>Select a Timezone</option>
