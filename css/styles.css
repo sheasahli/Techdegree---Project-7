@@ -325,14 +325,20 @@ img {
   border-radius: 5px;
 }
 
-/* .switch-material.switch-light > span {
+.switch-material.switch-light > span {
 	display: inline-block;
 	padding: 10px;
 }
 
 .switch-light strong {
 	padding-right: 10px;
-} */
+}
+
+.settings-option {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 .toggle-container{
       display: flex;
