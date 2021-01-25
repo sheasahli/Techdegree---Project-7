@@ -16,6 +16,7 @@ body {
 
 section h3 {
     text-transform: uppercase;
+    margin: 20px 0;
 }
 
 
@@ -242,6 +243,33 @@ svg {
   font-size: 2.5em;
   margin: 20px 0;
   font-weight: lighter;
+}
+
+
+/*----- New Members + Recent Activity-----*/
+
+img {
+  width: 50px;
+  height: 50px;
+  border-radius: 30px;
+  margin-top: 10px;
+  margin-right: 10px;
+}
+
+.members-text {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+}
+
+.members-text p {
+  margin-bottom: 3px;
+}
+
+.members-container {
+  display: grid;
+  grid-template-columns: 1fr 4fr 1fr;
+  border-bottom: 1px solid lightgrey;
 }
 
 
