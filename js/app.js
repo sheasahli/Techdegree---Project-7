@@ -1,14 +1,11 @@
-const emailToggle = document.querySelector('.email-toggle input');
-const profileToggle = document.querySelector(".profile-toggle input");
 
-const toggleOn = document.querySelector(".on");
-const slider = document.querySelector('.slider')
-const alertBanner = document.getElementById("alert");
-
-const traficCanvas = document.querySelector("#trafic-chart");
-const dailyCanvas = document.getElementById("dailyCanvas");
-const mobileCanvas = document.getElementById("mobile-chart");
 const alertBanner = document.getElementById('alert');
+const trafficCanvas = document.getElementById('traffic-chart');
+const dailyCanvas = document.getElementById('daily-chart');
+const mobileCanvas = document.getElementById('mobile-chart');
+const user = document.getElementById('userField');
+const message = document.getElementById('messageField');
+const send = document.getElementById('send');
 
 /*----- Alert -----*/
 
@@ -26,125 +23,311 @@ alertBanner.innerHTML =
     }
   });
 
-  const trafficData = {
-    labels: ["16-22", "23-29", "30-5", "6-12", "13-19", "20-26", "27-3",
-    "4-10", "11-17", "18-24", "25-31"],
-    datasets: [{
-    data: [500, 1000,1500, 2000, 1500, 1750, 1250, 1850, 2250, 1500,
-    2500],
-    backgroundColor: 'rgba(116, 119, 191, .3)',
-    borderWidth: 1,
-    }]
-    };
+  /*
+//////////////Traffic Chart////////////////
+*/
 
-    let trafficOptions = {
-      aspectRatio: 2.5,
-      animation: {
-      duration: 0
-      },
-      scales: {
-      yAxes: [{
-      ticks: {
-      beginAtZero:true
-      }
-      }]
-      },
-      legend : {
-      display: false
-      }
-      };
-
-      let trafficChart = new Chart(traficCanvas, {
-        type: 'line',
-        data:trafficData ,
-        options: trafficOptions
-        });
+const hourly = document.getElementById('hourly');
+const daily = document.getElementById('daily');
+const weekly = document.getElementById('weekly');
+const monthly = document.getElementById('monthly');
 
 
-  const dailyData = {
-    labels: ["S", "M", "T", "W", "T", "F", "S"],
-    datasets: [{
-    label: '# of Hits',
-    data: [75, 115, 175, 125, 225, 200, 100],
-    backgroundColor: '#7477BF',
-    borderWidth: 1
-    }]
-    };
-    const dailyOptions = {
-    scales: {
-    yAxes: [{
-    ticks: {
-    beginAtZero:true
-    }
-    }]
-    },
-    legend : {
-    display: false
-    }
-    }
+hourly.addEventListener('click', (e) => {
+	let element = e.target;
+	trafficFunction(element);
+});
 
-  let dailyChart = new Chart(dailyCanvas, {
-    type: 'bar',
-    data: dailyData,
-    options: dailyOptions
-    });
+daily.addEventListener('click', (e) => {
+	let element = e.target;
+	trafficFunction(element);
+});
+
+weekly.addEventListener('click', (e) => {
+	let element = e.target;
+	trafficFunction(element);
+});
+
+monthly.addEventListener('click', (e) => {
+	let element = e.target;
+	trafficFunction(element);
+});
 
 
 
-      const mobileData = {
-        labels: ["Desktop", "Tablet", "Phones"],
-        datasets: [{
-        label: '# of Users',
-        data: [2000, 550, 500],
-        borderWidth: 0,
-        backgroundColor: [
-        '#7477BF',
-        '#78CF82',
-        '#51B6C8'
-        ]
-        }]
-        };
+function trafficFunction(element) {
 
-  const mobileOptions = {
-    legend: {
-    position: 'right',
-    labels: {
-    boxWidth: 20,
-    fontStyle: 'bold'
-    }
-    }
-    }
 
-  let mobileChart = new Chart(mobileCanvas, {
-    type: 'doughnut',
-    data: mobileData,
-    options: mobileOptions
-    });
-    const user = document.getElementById("user-field");
-    const message = document.getElementById("message-field");
-    const send = document.querySelector(".send");
-  send.addEventListener("click", () => {
-    // ensure user and message fields are filled out
-    if (user.value === "" && message.value === "") {
-      alert("Please fill out user and message fields before sending");
-      } else if (user.value === "" ) {
-      alert("Please fill out user field before sending");
-      } else if (message.value === "" ) {
-      alert("Please fill out message field before sending");
-      } else {
-      alert(`Message successfully sent to: ${user.value}`);
-      }
-  });
+switch (element) {
+	case hourly:
+					let hourlyTrafficData = {
+				labels: ["1:00", "2:00", "3:00", "4:00", "5:00", "6:00", "7:00", "8:00", "9:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00", "20:00", "21:00", "22:00", "23:00", "24:00"],
+				datasets: [{
+					data:  [12, 10, 15, 15, 20, 20, 18, 35, 55, 50, 60, 65, 75, 90, 80, 75, 85, 70, 60, 50, 45, 45, 30, 25],
+					backgroundColor: 'rgba(200, 217, 236, .5)',
+					borderWidth: 1,
+				}]
+			};
 
-  // emailToggle.addEventListener('click', () =>  {
-  //   if (emailToggle.checked) {
-  //     toggleOff[0].style.display = 'none';
-  //   } else {
-  //     toggleOff[0].style.display = '';
-  //   }
-  // });
-  slider.addEventListener("click", () => {
+			let hourlyTrafficOptions = {
+				mainAspectRatio: false,
+				aspectRatio: 2.5,
+				animation: {
+					duration: 0
+				},
+				scales: {
+					yAxes: [{
+						ticks: {
+							beginAtZero: true
+						}
+					}]
+				},
+				legend: {
+					display: false
+				},
+			};
 
-          toggleOn.style.display = "";
-      }
-  );
+			const hourlyTrafficChart = new Chart(trafficCanvas, {
+				type: 'line',
+				data: hourlyTrafficData,
+				options: hourlyTrafficOptions
+			});
+
+		clearHighlight();
+		element.style.backgroundColor = "lightgreen";
+		element.style.borderRadius = "5px";
+		break;
+
+	case daily:
+			let dailyTrafficData = {
+				labels: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+					datasets: [{
+				data:  [200, 250, 300, 500, 600, 1050, 700],
+				backgroundColor: 'rgba(200, 217, 236, .5)',
+				borderWidth: 1,
+				}]
+			};
+
+			let dailyTrafficOptions = {
+				mainAspectRatio: false,
+				aspectRatio: 2.5,
+				animation: {
+					duration: 0
+				},
+				scales: {
+					yAxes: [{
+						ticks: {
+							beginAtZero: true
+						}
+					}]
+				},
+				legend: {
+					display: false
+				},
+			};
+
+			const dailyTrafficChart = new Chart(trafficCanvas, {
+				type: 'line',
+				data: dailyTrafficData,
+				options: dailyTrafficOptions
+			});
+		clearHighlight();
+
+		element.style.backgroundColor = "lightgreen";
+		element.style.borderRadius = "5px";
+		break;
+
+
+		case weekly:
+		let trafficData = {
+				labels: ["16-22", "23-29", "30-5", "6-12", "13-19", "20-26", "27-3", "4-10", "11-17", "18-24", "25-31"],
+				datasets: [{
+					data:  [750, 1250, 1000, 200, 1500, 1750, 1250, 1850, 2150, 2000, 2050],
+					backgroundColor: 'rgba(200, 217, 236, .5)',
+					borderWidth: 1,
+				}]
+			};
+
+			let trafficOptions = {
+				mainAspectRatio: false,
+				aspectRatio: 2.5,
+				animation: {
+					duration: 0
+				},
+				scales: {
+					yAxes: [{
+						ticks: {
+							beginAtZero: true
+						}
+					}]
+				},
+				legend: {
+					display: false
+				},
+			};
+
+			const trafficChart = new Chart(trafficCanvas, {
+				type: 'line',
+				data: trafficData,
+				options: trafficOptions
+			});
+		clearHighlight();
+
+		element.style.backgroundColor = "lightgreen";
+		element.style.borderRadius = "5px";
+		break;
+
+	case monthly:
+		let monthlyTrafficData = {
+				labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+				datasets: [{
+					data:  [3000, 3500, 4500, 3500, 2000, 1500, 1000, 3500, 5200, 6800, 7900, 8500],
+					backgroundColor: 'rgba(200, 217, 236, .5)',
+					borderWidth: 1,
+				}]
+			};
+
+			let monthlyTrafficOptions = {
+				mainAspectRatio: false,
+				aspectRatio: 2.5,
+				animation: {
+					duration: 0
+				},
+				scales: {
+					yAxes: [{
+						ticks: {
+							beginAtZero: true
+						}
+					}]
+				},
+				legend: {
+					display: false
+				},
+			};
+
+			const monthlyTrafficChart = new Chart(trafficCanvas, {
+				type: 'line',
+				data: monthlyTrafficData,
+				options: monthlyTrafficOptions
+			});
+
+		clearHighlight();
+
+		element.style.backgroundColor = "lightgreen";
+		element.style.borderRadius = "5px";
+		break;
+}
+
+	function clearHighlight() {
+		hourly.style.backgroundColor = "white";
+		daily.style.backgroundColor = "white";
+		weekly.style.backgroundColor = "white";
+		monthly.style.backgroundColor = "white";
+
+	}
+
+}
+
+
+
+/*
+//////////////Daily Chart////////////////
+*/
+
+const dailyData = {
+	labels: ["Sun", "Mon", "Tues", "Wed", "Thurs", "Fri", "Sat"],
+	datasets: [{
+		data: [240, 130, 120, 150, 170, 210, 305],
+		backgroundColor: 'rgba(200, 217, 236, .5)',
+		borderWidth: 1,
+
+	}]
+};
+
+const dailyOptions = {
+
+	scales: {
+		yAxes: [{
+			ticks: {
+				beginAtZero: true
+			}
+		}]
+	},
+	legend: {
+		display: false
+	},
+};
+
+const dailyChart = new Chart(dailyCanvas, {
+	type: 'bar',
+	data: dailyData,
+	options: dailyOptions
+});
+
+
+
+/*
+//////////////Mobile Chart////////////////
+*/
+
+const mobileData = {
+	labels: ["Phones", "Tablets", "Desktops"],
+	datasets: [{
+		label: "Number of Users",
+		data: [900, 500, 1200],
+		borderWidth: 0,
+		backgroundColor: [
+			'#7477BF',
+			'#81C98F',
+			'#74B1BF'
+		]
+	}]
+};
+
+const mobileOptions = {
+	legend: {
+		position: 'right',
+		labels: {
+			boxWidth: 20,
+			fontStyle: 'bold',
+		}
+	}
+};
+
+let mobileChart = new Chart(mobileCanvas, {
+	type: 'doughnut',
+	data: mobileData,
+	options: mobileOptions
+});
+
+/*
+////////////// Messaging ////////////////
+*/
+
+send.addEventListener('click', () => {
+	if (user.value === '' && message.value === '') {
+		alert("Please fill out both the user name and message section before sending.");
+	} else if (user.value === ''){
+		alert("Please fill out the user section before sending.");
+	} else if (message.value === ''){
+		alert("Please fill out the message section before sending.");
+	} else {
+			alert("The message was sent!");
+			user.value = '';
+			message.value = '';
+	}
+});
+
+
+/* INITIALIZING PAGE */
+
+function init() {
+	search.value = '';
+	user.value = '';
+	message.value = '';
+	trafficFunction(hourly);
+
+}
+
+
+init();

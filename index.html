@@ -2,7 +2,7 @@
 <html lang="en">
 
   <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <title>SheaApp Dashboard</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/normalize.css">
@@ -10,6 +10,8 @@
     <link rel="stylesheet" type="text/css" href="css/toggle/toggle-switch-px.css">
     <link rel="stylesheet" type="text/css" href="css/toggle/toggle-switch-rem.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.css" integrity="sha512-C7hOmCgGzihKXzyPU/z4nv97W0d9bv4ALuuEbSf6hm93myico9qa0hv4dODThvCsqQUmKmLcJmlpRmCaApr83g==" crossorigin="anonymous" />
+    		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js" integrity="sha512-d9xgZrVZpmmQlfonhQUvTR7lMPtO7NkZMkA0ABN3PHCbKA5nqylQ/yWlFAyY6hYgdF1Qh6nYiuADWwKB4C2WSw==" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/styles.css">
   </head>
 
@@ -67,19 +69,19 @@
 
       <!--  line graph -->
     <div class="main-content-wrapper">
-      <section class="traffic">
+      <section class="traffic" id="traffic">
         <div class="traffic-header">
           <h3>Traffic</h3>
           <ul class="traffic-nav">
-            <li class="traffic-nav-link">Hourly</li>
-            <li class="traffic-nav-link">Daily</li>
-            <li class="traffic-nav-link">Weekly</li>
-            <li class="traffic-nav-link">Monthly</li>
+            <li class="traffic-nav-link" id="hourly">Hourly</li>
+            <li class="traffic-nav-link" id="daily">Daily</li>
+            <li class="traffic-nav-link" id="weekly">Weekly</li>
+            <li class="traffic-nav-link" id="monthly">Monthly</li>
           </ul>
-        </div>
-        <div class="widget-container-full">
+         </div>
+         <div class="widget-container-full">
           <canvas id="traffic-chart"></canvas>
-        </div>
+         </div>
        </section>
 
         <!--  bar graph -->
@@ -96,7 +98,7 @@
           <h3>Mobile Users</h3>
 
           <div class="widget-container-half">
-            <canvas id="users-chart"></canvas>
+            <canvas id="mobile-chart"></canvas>
           </div>
         </section>
 
