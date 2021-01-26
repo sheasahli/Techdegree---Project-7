@@ -1,4 +1,6 @@
 
+/*----- Variables -----*/
+
 const alertBanner = document.getElementById('alert');
 const trafficCanvas = document.getElementById('traffic-chart');
 const dailyCanvas = document.getElementById('daily-chart');

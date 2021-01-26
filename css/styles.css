@@ -289,6 +289,12 @@ img {
   margin-top: 0;
 }
 
+.arrow {
+  margin-left: auto;
+  text-decoration: none;
+  font-size: 2em;
+}
+
 /*----- Message User -----*/
 
 
