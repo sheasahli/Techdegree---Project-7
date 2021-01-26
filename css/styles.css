@@ -219,9 +219,13 @@ nav {
     background: #7477BF;
     border-radius: 50%;
     margin: auto;
-    display: block;
+    display: flex;
 }
 
+.social-img svg {
+  margin: auto;
+  width: 50px;
+}
 
 .social-text {
   color: #7477BF;
