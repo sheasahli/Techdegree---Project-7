@@ -212,37 +212,16 @@ nav {
   align-items: center;
 }
 
-/*.facebook,
-.google,
-.twitter {
-  background-color: #7477BF;
-  padding: 10px;
-}*/
 
 .social-img {
-    width: 50px;
-    height: 50px;
-    fill:white;
+    width: 85px;
+    height: 85px;
     background: #7477BF;
     border-radius: 50%;
-    margin: 10px;
-    display: flex;
-    justify-items: center;
-    align-content: center;
+    margin: auto;
+    display: block;
 }
 
-path {
-  fill: white;
-  padding: 10px;
-}
-
-svg {
-   width: 40px;
-   display:flex;
-   justify-content: center;
-   align-content: center;
-   padding-left: 10px;
-}
 
 .social-text {
   color: #7477BF;
@@ -290,7 +269,7 @@ img {
 }
 
 .arrow {
-  margin-left: auto;
+  margin: 0 auto;
   text-decoration: none;
   font-size: 2em;
 }
