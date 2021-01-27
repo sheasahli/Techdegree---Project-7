@@ -492,6 +492,14 @@ section.settings {
 
 @media (min-width: 1024px) {
 
+  .grid-container {
+    grid-template-columns: 90px 1fr;
+  }
+
+  .icon {
+    height: 30px;
+  }
+
 .headline {
   padding: 0 200px 0 15px;
 }
