@@ -2,14 +2,18 @@
 /*----- Variables -----*/
 
 const alertBanner = document.getElementById('alert');
+
 const trafficCanvas = document.getElementById('traffic-chart');
 const dailyCanvas = document.getElementById('daily-chart');
 const mobileCanvas = document.getElementById('mobile-chart');
+
 const user = document.getElementById('userField');
 const message = document.getElementById('messageField');
 const send = document.getElementById('send');
 
 /*----- Alert -----*/
+
+
 
 alertBanner.innerHTML =
 `
@@ -96,8 +100,8 @@ switch (element) {
 			});
 
 		clearHighlight();
-		element.style.backgroundColor = "lightgreen";
-		element.style.borderRadius = "5px";
+		element.style.backgroundColor = "#81C98F";
+		element.style.borderRadius = "15px";
 		break;
 
 	case daily:
@@ -135,8 +139,8 @@ switch (element) {
 			});
 		clearHighlight();
 
-		element.style.backgroundColor = "lightgreen";
-		element.style.borderRadius = "5px";
+    element.style.backgroundColor = "#81C98F";
+		element.style.borderRadius = "15px";
 		break;
 
 
@@ -175,8 +179,8 @@ switch (element) {
 			});
 		clearHighlight();
 
-		element.style.backgroundColor = "lightgreen";
-		element.style.borderRadius = "5px";
+    element.style.backgroundColor = "#81C98F";
+		element.style.borderRadius = "15px";
 		break;
 
 	case monthly:
@@ -215,8 +219,8 @@ switch (element) {
 
 		clearHighlight();
 
-		element.style.backgroundColor = "lightgreen";
-		element.style.borderRadius = "5px";
+    element.style.backgroundColor = "#81C98F";
+		element.style.borderRadius = "15px";
 		break;
 }
 

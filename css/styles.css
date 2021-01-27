@@ -85,15 +85,25 @@ h1 {
 .bell {
   height: 20px;
   padding-right: 10px;
-  position: relative;
 }
 
 .bell:hover {
-  transform: scale(1.1);
+  transform: rotate(20deg);
+  transition-timing-function: ease-in-out;
   transition-duration: .5s;
 }
 
-#notifications img {
+.green-circle {
+  width: 8px;
+  height: 8px;
+  background-color: #81c98f;
+  border-radius: 50%;
+  position: relative;
+  top: -25px;
+  right: -10px;
+}
+
+ #notifications img {
   position: absolute;
   height: 10px;
   top: 35px;
@@ -364,9 +374,7 @@ img {
 
 @media (min-width: 768px) {
 
-  section {
-    border: 2px solid lightgrey;
-  }
+  /* --- GRID LAYOUT ----- */
 
   .grid-container {
     grid-template-columns: 55px 1fr;
@@ -376,8 +384,14 @@ img {
     }
 
 .main-content-wrapper {
-    grid-template-columns: 50%;
-    }
+  margin: 0 10px 20px;
+  width: 95vw;
+  padding: 0;
+}
+
+.main-content-wrapper section {
+  padding: 1rem 1rem;
+}
 
 .widget-container-full {
   width: 90vw;
@@ -387,27 +401,99 @@ img {
   width: 45vw;
   }
 
+  .header {
+    grid-column-start: 1;
+    grid-column-end: 4;
+  }
+
+  .navigation {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    padding: 0;
+  }
+
   .traffic,
   .social-stats {
-    grid-column: 1 / span:2;
+    grid-column-start: 2;
+		grid-column-end: 4
   }
 
   .daily,
   .members,
   .message {
-    grid-column: 1 / span:1;
+    grid-column-start: 2;
+		grid-column-end: 3;
   }
 
   .mobile-users,
   .recent-activity,
   .settings {
-    grid-column: 2 / span:1;
+    grid-column-start: 3;
+		grid-column-end: 4;
   }
 
+  section {
+    margin: 10px 0;
+  }
 
+/* --- NAVIGATION ----- */
+
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+
+  .icon {
+		margin: 20px auto;
+	}
+
+	.icon:hover {
+		border-left: 5px solid green;
+
+	}
+
+/* --- SOCIAL STATS ----- */
+
+.social-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+
+}
+
+.social-img {
+  margin: 0 20px;
+}
+
+/* --- New Members + Recent Activity ----- */
+
+section.members,
+section.recent-activity {
+  display: grid;
+  align-content: space-between;
+}
+
+/* --- Settings ----- */
+
+section.settings {
+  display: grid;
+  align-content: space-between;
+}
+
+.settings-button {
+  margin-bottom: 0;
+}
+
+#send {
+  margin-bottom: 0;
+}
 }
 
 @media (min-width: 1024px) {
 
+.headline {
+  padding: 0 200px 0 15px;
+}
 
 }
